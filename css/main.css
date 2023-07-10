@@ -45,7 +45,7 @@ p {
     font-weight: 300;
     display: inline-block;
     padding: 15rem 60rem;
-    border: 1px solid var(--bg);
+    border: 1px solid var(--lc);
     border-radius: 4rem;
 }
 
@@ -332,10 +332,15 @@ p {
     padding-bottom: 100rem;
 }
 
+.main_menulist {
+    text-align: center;
+}
+
 .main_menulist .title {
     display: flex;
     align-items: center;
     gap: 50rem;
+    margin: 0 0 30rem 0;
 }
 
 .main_menulist .title h2 {
@@ -360,4 +365,81 @@ p {
 .main_menulist .title .list li.on {
     color: var(--wc);
     background: var(--mc);
+}
+
+
+.main_menulist .menu {
+    display: flex;
+    overflow: hidden;
+    margin: 0 0 60rem 0;
+}
+
+.main_menulist .menu>* {
+    opacity: 0;
+    display: none;
+}
+
+.main_menulist .menu>*.on {
+    opacity: 1;
+    display: block;
+}
+
+.main_today {
+    padding: 0 0 100rem 0;
+}
+
+.main_today .inner {
+    position: relative;
+    height: 275rem;
+    background: url(../images/event011.jpg)no-repeat center center/cover;
+}
+
+.main_today .itm {
+    position: absolute;
+    top: 50%;
+    right: 35%;
+    transform: translate(0, -50%);
+}
+
+.main_today .itm h2 {
+    font-size: 22rem;
+    font-weight: 700;
+}
+
+.main_today .itm strong {
+    font-size: 30rem;
+    font-weight: 700;
+}
+
+.main_subscribe {
+    padding: 100rem 0;
+    background: var(--bg);
+}
+
+.main_subscribe .title {
+    max-width: 1200rem;
+    margin: 0 auto 30rem auto;
+    padding: 0 15rem;
+}
+
+.main_subscribe .title h2 {
+    font-size: 30rem;
+    font-weight: 700;
+    margin: 0 0 30rem 0;
+}
+
+.main_subscribe .title p {
+    color: var(--lc);
+}
+
+.main_subscribe .inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15rem;
+}
+
+.main_subscribe .inner .right {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15rem;
 }

@@ -21,4 +21,22 @@ $(function () {
         },
     });
 
+    const bestSlide = new Swiper('.best_slide', {
+        slidesPerView: 5,
+    });
+    const weeklySlide = new Swiper('.weekly_slide', {
+        slidesPerView: 5,
+    });
+
+    $('.main_menulist .list li').on('click', function (e) {
+        e.preventDefault();
+        let idx = $(this).index();
+        $('.main_menulist .menu>*').eq(idx).addClass('on').siblings().removeClass('on');
+    });
+
+    $('.main_menulist .list li').on('click', function () {
+        $(this).addClass('on').siblings().removeClass('on');
+    })
+
+
 })
