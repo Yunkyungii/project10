@@ -1,6 +1,6 @@
-/* * {
+* {
     outline: 1px solid tomato;
-} */
+}
 
 :root {
     --line: #f2f2f2;
@@ -86,9 +86,15 @@ p {
     transition: 0.5s;
 }
 
+.header.on {
+    background: var(--wc);
+    color: var(--dc);
+    border-bottom: 1px solid var(--bg);
+}
+
 .header:hover {
     background: var(--wc);
-    color: #333;
+    color: var(--dc);
     border-bottom: 1px solid var(--bg);
 }
 
@@ -98,6 +104,11 @@ p {
     gap: 40rem;
     align-items: center;
     position: relative;
+    transition: 0.5s;
+}
+
+.header.on .inner {
+    height: 80rem;
 }
 
 .header h1 {
@@ -106,6 +117,10 @@ p {
     height: 36rem;
     background: url(../images/logo_white.png)no-repeat;
     transition: 0.5s;
+}
+
+.header.on h1 {
+    background: url(../images/logo_black.png)no-repeat;
 }
 
 .header:hover h1 {
@@ -325,10 +340,17 @@ p {
     position: absolute;
     top: 50%;
     left: 50%;
-    max-width: 1300rem;
+    max-width: 1400rem;
     width: 100%;
     transform: translate(-50%, -50%);
-    z-index: 999;
+    cursor: pointer;
+    z-index: 997;
+}
+
+.main_visual .arrows i {
+    position: absolute;
+    font-size: 40rem;
+    color: var(--lc);
 }
 
 .main_visual .arrows .left {
@@ -369,6 +391,7 @@ p {
 
 .main_menulist {
     text-align: center;
+    position: relative;
 }
 
 .main_menulist .title {
@@ -426,6 +449,31 @@ p {
 
 .main_menulist .menu .txt_box {
     text-align: start;
+}
+
+.main_menulist .arrows {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 1300rem;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 997;
+}
+
+.main_menulist .arrows i {
+    position: absolute;
+    font-size: 28rem;
+    color: var(--lc);
+}
+
+.main_menulist .arrows .left {
+    left: 0;
+}
+
+.main_menulist .arrows .right {
+    right: 0;
 }
 
 
@@ -581,6 +629,7 @@ p {
 
 .main_store {
     padding: 100rem 0;
+    position: relative;
 }
 
 .main_store .inner {
@@ -626,4 +675,29 @@ p {
     font-weight: 100;
     font-size: 15rem;
     line-height: 1.4;
+}
+
+.main_store .arrows {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 1200rem;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 997;
+}
+
+.main_store .arrows i {
+    position: absolute;
+    font-size: 40rem;
+    color: var(--lc);
+}
+
+.main_store .arrows .left {
+    left: 0;
+}
+
+.main_store .arrows .right {
+    right: 0;
 }

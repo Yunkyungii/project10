@@ -1,5 +1,14 @@
 $(function () {
 
+    $(function () {
+        $(window).on('scroll', function () {
+            let sct = $(window).scrollTop();
+            sct > 0
+                ? $('.header').addClass('on')
+                : $('.header').removeClass('on')
+        });
+    });
+
     const mainSlide = new Swiper('.main_slide', {
         loop: true,
         effect: "fade",
@@ -11,8 +20,8 @@ $(function () {
             delay: 3000,
         },
         navigation: {
-            nextEl: ".main_visual .left",
-            prevEl: ".main_visual .right",
+            nextEl: ".main_visual .right",
+            prevEl: ".main_visual .left",
         },
     });
 
@@ -28,10 +37,18 @@ $(function () {
     const bestSlide = new Swiper('.best_slide', {
         loop: true,
         slidesPerView: 5,
+        navigation: {
+            nextEl: ".main_menulist .right",
+            prevEl: ".main_menulist .left",
+        },
     });
     const weeklySlide = new Swiper('.weekly_slide', {
         loop: true,
         slidesPerView: 5,
+        navigation: {
+            nextEl: ".main_menulist .right",
+            prevEl: ".main_menulist .left",
+        },
     });
 
     $('.main_menulist .list li').on('click', function (e) {
@@ -46,13 +63,17 @@ $(function () {
 
     const storeSlide = new Swiper('.store_slide', {
         loop: true,
-        spaceBetween: 0,
+        // spaceBetween: 0,
         slidesPerView: 3,
         grabCursor: true,
         centeredSlides: true,
         roundLengths: true,
         autoplay: {
             delay: 3000,
+        },
+        navigation: {
+            nextEl: ".main_store .right",
+            prevEl: ".main_store .left",
         },
     });
 
