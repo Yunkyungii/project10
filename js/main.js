@@ -10,6 +10,10 @@ $(function () {
         autoplay: {
             delay: 3000,
         },
+        navigation: {
+            nextEl: ".main_visual .left",
+            prevEl: ".main_visual .right",
+        },
     });
 
     const noticeSlide = new Swiper('.notice_slide', {
@@ -22,9 +26,11 @@ $(function () {
     });
 
     const bestSlide = new Swiper('.best_slide', {
+        loop: true,
         slidesPerView: 5,
     });
     const weeklySlide = new Swiper('.weekly_slide', {
+        loop: true,
         slidesPerView: 5,
     });
 
@@ -36,7 +42,19 @@ $(function () {
 
     $('.main_menulist .list li').on('click', function () {
         $(this).addClass('on').siblings().removeClass('on');
-    })
+    });
+
+    const storeSlide = new Swiper('.store_slide', {
+        loop: true,
+        spaceBetween: 0,
+        slidesPerView: 3,
+        grabCursor: true,
+        centeredSlides: true,
+        roundLengths: true,
+        autoplay: {
+            delay: 3000,
+        },
+    });
 
 
 })

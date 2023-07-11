@@ -1,3 +1,7 @@
+/* * {
+    outline: 1px solid tomato;
+} */
+
 :root {
     --line: #f2f2f2;
     --wc: #ffffff;
@@ -39,13 +43,29 @@ p {
     padding: 0 15rem;
 }
 
+.title {
+    max-width: 1200rem;
+    margin: 0 auto 30rem auto;
+    padding: 0 15rem;
+}
+
+.title h2 {
+    font-size: 30rem;
+    font-weight: 700;
+    margin: 0 0 20rem 0;
+}
+
+.title p {
+    color: var(--lc);
+}
+
 .btn {
     font-size: 15rem;
     color: var(--lc);
     font-weight: 300;
     display: inline-block;
     padding: 15rem 60rem;
-    border: 1px solid var(--lc);
+    border: 1px solid #ddd;
     border-radius: 4rem;
 }
 
@@ -233,12 +253,13 @@ p {
 /* ---------------------------------메인비주얼---------------------------------------- */
 
 .main_visual {
-    height: 600rem;
+    height: 650rem;
+    position: relative;
 }
 
 .main_slide {
     position: relative;
-    height: 600rem;
+    height: 650rem;
 }
 
 .main_slide .itm .slide-img {
@@ -300,6 +321,24 @@ p {
     font-size: 15rem;
 }
 
+.main_visual .arrows {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 1300rem;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+
+.main_visual .arrows .left {
+    left: 0;
+}
+
+.main_visual .arrows .right {
+    right: 0;
+}
+
 .main_notice {
     padding: 50rem 0;
 }
@@ -327,10 +366,6 @@ p {
 
 
 /* ---------------------------------섹션2---------------------------------------- */
-
-.main_menulist {
-    padding-bottom: 100rem;
-}
 
 .main_menulist {
     text-align: center;
@@ -369,77 +404,226 @@ p {
 
 
 .main_menulist .menu {
-    display: flex;
+    position: relative;
+    min-height: 400rem;
     overflow: hidden;
-    margin: 0 0 60rem 0;
+    margin: 0 0 20rem 0;
 }
 
 .main_menulist .menu>* {
+    position: absolute;
+    inset: 0 0 0 0;
     opacity: 0;
-    display: none;
+    visibility: hidden;
+    z-index: 1;
 }
 
 .main_menulist .menu>*.on {
+    visibility: visible;
     opacity: 1;
-    display: block;
+    z-index: 2;
 }
+
+.main_menulist .menu .txt_box {
+    text-align: start;
+}
+
+
+/* ---------------------------------메인비주얼---------------------------------------- */
+
 
 .main_today {
-    padding: 0 0 100rem 0;
+    padding: 100rem 0;
+    position: relative;
 }
 
-.main_today .inner {
+.main_today figure {
     position: relative;
-    height: 275rem;
-    background: url(../images/event011.jpg)no-repeat center center/cover;
 }
 
 .main_today .itm {
     position: absolute;
-    top: 50%;
-    right: 35%;
-    transform: translate(0, -50%);
+    top: 0;
+    right: 0;
+    padding: 50rem 60rem;
+    width: 50%;
+    height: 100%;
+}
+
+.main_today .tit {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 60rem 0;
 }
 
 .main_today .itm h2 {
-    font-size: 22rem;
+    font-size: 30rem;
     font-weight: 700;
 }
 
 .main_today .itm strong {
+    display: block;
     font-size: 30rem;
     font-weight: 700;
+    margin: 0 0 30rem 0;
 }
+
+
+/* ---------------------------------메인비주얼---------------------------------------- */
+
 
 .main_subscribe {
     padding: 100rem 0;
     background: var(--bg);
 }
 
-.main_subscribe .title {
-    max-width: 1200rem;
-    margin: 0 auto 30rem auto;
-    padding: 0 15rem;
-}
 
-.main_subscribe .title h2 {
-    font-size: 30rem;
-    font-weight: 700;
-    margin: 0 0 30rem 0;
-}
-
-.main_subscribe .title p {
-    color: var(--lc);
-}
 
 .main_subscribe .inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 15rem;
+    gap: 20rem;
 }
 
 .main_subscribe .inner .right {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 15rem;
+    gap: 20rem;
+}
+
+.main_subscribe figure {
+    position: relative;
+}
+
+.main_subscribe .left figure figcaption {
+    position: absolute;
+    bottom: 50rem;
+    left: 40rem;
+}
+
+.main_subscribe .right figure figcaption {
+    position: absolute;
+    left: 40rem;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.main_subscribe figure strong {
+    display: block;
+    margin: 0 0 15rem 0;
+    font-size: 28rem;
+
+}
+
+
+/* ---------------------------------메인비주얼---------------------------------------- */
+
+.main_event {
+    padding: 100rem 0;
+}
+
+.main_event .inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20rem;
+}
+
+.main_event .inner figure {
+    position: relative;
+}
+
+.main_event .inner figure .txt_box {
+    position: absolute;
+    top: 50%;
+    left: 40rem;
+    transform: translate(0, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+}
+
+.main_event .inner figure .story {
+    color: var(--wc);
+}
+
+.main_event .inner figure strong {
+    font-size: 28rem;
+    font-weight: 600;
+}
+
+
+
+/* ---------------------------------메인비주얼---------------------------------------- */
+.main_banner figure {
+    position: relative;
+}
+
+.main_banner figure .txt_box {
+    position: absolute;
+    top: 50%;
+    left: 80rem;
+    transform: translate(0, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20rem;
+    color: var(--wc);
+}
+
+.main_banner figure .txt_box span {
+    font-size: 15rem;
+}
+
+.main_banner figure .txt_box strong {
+    font-size: 28rem;
+}
+
+/* ---------------------------------메인비주얼---------------------------------------- */
+
+.main_store {
+    padding: 100rem 0;
+}
+
+.main_store .inner {
+    overflow: hidden;
+    text-align: center;
+}
+
+.store_slide {
+    margin: 0 0 40rem 0;
+}
+
+.store_slide .swiper-wrapper {
+    align-items: center;
+}
+
+.store_slide .swiper-slide {
+    position: relative;
+    transition: all 200ms linear;
+    transform: scale(0.9);
+}
+
+.store_slide .swiper-slide-active {
+    transform: scale(1);
+}
+
+.store_slide .txt_box {
+    position: absolute;
+    top: 50%;
+    left: 40rem;
+    transform: translate(0, -50%);
+    color: var(--wc);
+    text-align: start;
+}
+
+.store_slide .txt_box strong {
+    font-size: 28rem;
+    display: block;
+    margin: 0 0 10rem 0;
+    line-height: 1.3;
+}
+
+.store_slide .txt_box span {
+    font-weight: 100;
+    font-size: 15rem;
+    line-height: 1.4;
 }
