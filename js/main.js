@@ -12,9 +12,12 @@ $(function () {
     const mainSlide = new Swiper('.main_slide', {
         loop: true,
         effect: "fade",
-        scrollbar: {
-            el: ".swiper-scrollbar",
-            hide: false,
+        pagination: {
+            el: ".main_visual .dots",
+            clickable: true,
+            renderBullet: function (index, className) {
+                return '<span class="' + className + '">' + (index + 1) + "</span>";
+            },
         },
         autoplay: {
             delay: 3000,
@@ -63,8 +66,8 @@ $(function () {
 
     const storeSlide = new Swiper('.store_slide', {
         loop: true,
-        // spaceBetween: 0,
-        slidesPerView: 3,
+        // spaceBetween: 10,
+        slidesPerView: 1,
         grabCursor: true,
         centeredSlides: true,
         roundLengths: true,
@@ -75,6 +78,15 @@ $(function () {
             nextEl: ".main_store .right",
             prevEl: ".main_store .left",
         },
+        breakpoints: {
+            768: {
+                slidesPerView: 3,
+            },
+        },
+    });
+
+    $('.main_today .timer').countdown('2023/07/13', function (event) {
+        $(this).html(event.strftime('%H:%M:%S'));
     });
 
 

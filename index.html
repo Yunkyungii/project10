@@ -13,6 +13,7 @@
 
     <script src="./js/jquery-1.12.4.min.js"></script>
     <script src="./js/swiper.min.js"></script>
+    <script src="./js/jquery.countdown.min.js"></script>
     <script src="./js/main.js"></script>
 </head>
 
@@ -160,13 +161,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-scrollbar"></div>
                 </div>
                 <div class="arrows">
                     <i class="bi bi-chevron-left left"></i>
                     <i class="bi bi-chevron-right right"></i>
                 </div>
-                <div class="scrollbar"></div>
+                <div class="dots">
+                    <span>01</span>
+                    <span>02</span>
+                    <span>03</span>
+                    <span>04</span>
+                </div>
             </section>
             <section class="main_notice">
                 <div class="inner">
@@ -413,11 +418,11 @@
                                     오늘만 이 가격
                                 </h2>
                                 <div class="timer">
-                                    <span>카운트다운</span>
+                                    <span class="blind">카운트다운</span>
                                 </div>
                             </div>
                             <strong>스페셜 티 에디션</strong>
-                            <p>66500원</p>
+                            <p>66,500원</p>
                         </div>
                     </figure>
                 </div>
@@ -622,9 +627,10 @@
             </section>
         </main>
         <footer class="footer">
-            <div class="inner">
-                <div class="customer_link">
-                    <a href="">로그인</a>
+
+            <div class="customer_link">
+                <div class="inner">
+                    <a href="" class="login_btn">로그인</a>
                     <ul>
                         <li><a href="https://www.tiktok.com/@osulloc_official"><i class="bi bi-tiktok"></i></a></li>
                         <li><a href="https://www.youtube.com/channel/UC27q_WWuOkdyNIr7M_6trvA"><i
@@ -632,48 +638,67 @@
                         <li><a href="https://instagram.com/osulloc_official/"><i class="bi bi-instagram"></i></a></li>
                     </ul>
                 </div>
-                <div class="top">
-                    <ul>
-                        고객상담센터 · 주문/배송문의
-                        help@osulloc.com
-                        080-805-5555
-                        평일 09:30 - 17:00 (점심 11:30 - 13:00)
-                    </ul>
-                    <ul>
-                        특판, 대량구매 문의
-                        mall@osulloc.com
-                        카카오톡ID : osullocmall
-                        평일 09:30 - 17:00 (점심 11:30 - 13:00)
-                    </ul>
-                    <ul>
-                        매장안내
-                        멤버십혜택
-                        대량구매
-                        1:1문의
-                        뷰티포인트
-                        추후적립
+            </div>
+            <div class="top">
+                <div class="inner">
+                    <div class="contact01">
+                        <span>고객상담센터 · 주문/배송문의</span>
+                        <span><a href="mailto:help@osulloc.coms">help@osulloc.com</a></span>
+                        <span><a href="tel:080-805-5555" class="tel">080-805-5555 </a></span>
+                        <span>평일 09:30 - 17:00 (점심 11:30 - 13:00)</span>
+                    </div>
+                    <div class="contact02">
+                        <span> 특판, 대량구매 문의</span>
+                        <span><a href="mailto:mall@osulloc.com">mall@osulloc.com</a></span>
+                        <span>카카오톡ID : osullocmall</span>
+                        <span>평일 09:30 - 17:00 (점심 11:30 - 13:00)</span>
+                    </div>
+                    <ul class="f_service">
+                        <li><a href=""><img src="./images/f1.png" alt="">매장안내</a></li>
+                        <li><a href=""><img src="./images/f2.png" alt="">멤버십혜택</a></li>
+                        <li><a href=""><img src="./images/f5.png" alt="">대량구매</a></li>
+                        <li><a href=""><img src="./images/f4.png" alt="">1:1문의</a></li>
+                        <li><a href=""><img src="./images/beauti.png" alt="">뷰티포인트 추후적립</a></li>
                     </ul>
                 </div>
+            </div>
+            <div class="inner">
                 <div class="bottom">
                     <figure>
                         <img src="./images/f_logo.png" alt="">
                     </figure>
                     <div class="con">
-                        <ul class="service">
-                            회사소개 서비스 이용약관 개인정보 처리방침 영상정보 처리방침 뷰티포인트 임직원할인 사이트맵 전자공고
-                        </ul>
-                        <ul>
-                            대표이사:서혁제 주소:서울특별시 용산구 한강대로 100, 14층(한강로2가) 사업자등록번호: 390-87-01499 사업자 정보확인 >
-                            통신판매업신고번호:2019-서울용산-1173호 호스팅제공자: ㈜오설록
+                        <ul class="f_info">
+                            <li><a href="">회사소개</a></li>
+                            <li><a href="">서비스 이용약관</a></li>
+                            <li><a href=""><strong>개인정보 처리방침</strong></a></li>
+                            <li><a href="">영상정보 처리방침</a></li>
+                            <li><a href=""> 뷰티포인트</a></li>
+                            <li><a href=""> 임직원할인</a></li>
+                            <li><a href="">사이트맵</a></li>
+                            <li><a href="">전자공고</a></li>
 
-                            (주)오설록은 오설록 브랜드를 제외한 입점 브랜드에 대해서는 통신판매중개자 이며 통신판매의 당사자가 아닙니다.
-                            따라서 입점판매자가 등록한 상품정보 및 거래에 대해 책임을 지지 않습니다.
                         </ul>
+                        <div class="address">
+                            <span>㈜ 오설록</span>
+                            <span>
+                                대표이사:서혁제 주소:서울특별시 용산구 한강대로 100, 14층(한강로2가) 사업자등록번호: 390-87-01499 <a href="">사업자 정보확인
+                                    ></a>
+                                <br>
+                                통신판매업신고번호:2019-서울용산-1173호 호스팅제공자: ㈜오설록
+                            </span>
+                            <span>
+                                (주)오설록은 오설록 브랜드를 제외한 입점 브랜드에 대해서는 통신판매중개자 이며 통신판매의 당사자가 아닙니다. <br>
+                                따라서 입점판매자가 등록한 상품정보 및 거래에 대해 책임을 지지 않습니다.
+                            </span>
+
+                        </div>
                     </div>
                 </div>
             </div>
         </footer>
     </div>
 </body>
+
 
 </html>
