@@ -38,19 +38,42 @@ $(function () {
     });
 
     const bestSlide = new Swiper('.best_slide', {
-        loop: true,
-        slidesPerView: 5,
+        loop: false,
+        slidesPerView: 3,
+        direction: "vertical",
+        spaceBetween: 10,
+        grid: {
+            rows: 3,
+
+        },
+        spaceBetween: 10,
         navigation: {
             nextEl: ".main_menulist .right",
             prevEl: ".main_menulist .left",
         },
+        breakpoints: {
+            768: {
+                direction: 'horizontal',
+                slidesPerView: 5,
+                loop: true,
+            },
+        },
     });
     const weeklySlide = new Swiper('.weekly_slide', {
-        loop: true,
+        loop: false,
         slidesPerView: 5,
+        direction: "vertical",
+        spaceBetween: 10,
         navigation: {
             nextEl: ".main_menulist .right",
             prevEl: ".main_menulist .left",
+        },
+        breakpoints: {
+            768: {
+                direction: 'horizontal',
+                slidesPerView: 5,
+                loop: true,
+            },
         },
     });
 
@@ -85,9 +108,36 @@ $(function () {
         },
     });
 
-    $('.main_today .timer').countdown('2023/07/13', function (event) {
+    $('.main_today .timer').countdown('2023/07/15', function (event) {
         $(this).html(event.strftime('%H:%M:%S'));
     });
 
+    const moSlide = new Swiper('.mo_slide', {
+        slidesPerView: "auto",
+        spaceBetween: 30,
+        // centeredSlides: true,
+    })
+
+
+    $('.footer .bottom .btn').on('click', function (e) {
+        e.preventDefault();
+        $('.footer .bottom .address').toggleClass('on');
+    });
+
+    $('.header .mobile_btn').on('click', function (e) {
+        e.preventDefault();
+        $('.header .gnb').toggleClass('on');
+    })
+
+    $('.gnb>ul>li>a').on('click', function (e) {
+        e.preventDefault();
+        $(this).next().stop().slideToggle(500);
+        $(this).parent().siblings().find('.sub').stop().slideUp();
+    });
+
+    // $(window).on('resize', function () {
+    //     $('.gnb .sub').removeAttr('style')
+    // })
 
 })
+
