@@ -571,11 +571,11 @@ p {
 
 @media(max-width:768px) {
     .main_visual {
-        height: 550rem;
+        height: 600rem;
     }
 
     .main_slide {
-        height: 550rem;
+        height: 600rem;
     }
 
     .main_slide .itm01 {

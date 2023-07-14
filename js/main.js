@@ -110,6 +110,7 @@ $(function () {
 
     const moSlide = new Swiper('.mo_slide', {
         slidesPerView: "auto",
+        // draggable: true,
         spaceBetween: 30,
         // centeredSlides: true,
     })
