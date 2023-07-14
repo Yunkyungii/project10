@@ -11,6 +11,7 @@ $(function () {
 
     const mainSlide = new Swiper('.main_slide', {
         loop: true,
+        centeredSlides: true,
         effect: "fade",
         pagination: {
             el: ".main_visual .dots",
@@ -42,11 +43,6 @@ $(function () {
         slidesPerView: 3,
         direction: "vertical",
         spaceBetween: 10,
-        grid: {
-            rows: 3,
-
-        },
-        spaceBetween: 10,
         navigation: {
             nextEl: ".main_menulist .right",
             prevEl: ".main_menulist .left",
@@ -61,7 +57,7 @@ $(function () {
     });
     const weeklySlide = new Swiper('.weekly_slide', {
         loop: false,
-        slidesPerView: 5,
+        slidesPerView: 3,
         direction: "vertical",
         spaceBetween: 10,
         navigation: {

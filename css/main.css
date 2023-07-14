@@ -239,6 +239,10 @@ p {
     line-height: 100rem;
 }
 
+.header.on .hd_customer>li>a {
+    color: var(--dc);
+}
+
 .header .hd_customer>li:hover i {
     color: var(--mc);
 }
@@ -263,6 +267,10 @@ p {
 .header .hd_service>li {
     position: relative;
     line-height: 100rem;
+}
+
+.header.on .hd_service>li>a {
+    color: var(--dc);
 }
 
 .header .hd_service>li:hover>a {
@@ -294,39 +302,16 @@ p {
 
 
 @media(max-width:768px) {
-    .header {
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        z-index: 999;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, .25), transparent);
-        color: var(--wc);
-        transition: 0.5s;
-    }
 
-    .header.on {
-        background: var(--wc);
-        border-bottom: 1px solid var(--bg);
 
-    }
 
     .header .inner {
         height: 80rem;
-        display: flex;
         justify-content: space-between;
         gap: 40rem;
-        align-items: center;
-        position: relative;
-        transition: 0.5s;
-    }
-
-    .header.on .inner {
-        height: 80rem;
     }
 
     .header h1 {
-        display: block;
         width: 60rem;
         height: 53rem;
         background: url(../images/logo_white.png)no-repeat center center/contain;
@@ -336,13 +321,12 @@ p {
 
     .header.on h1 {
         background: url(../images/logo_black.png)no-repeat center center/contain;
-        background-size: contain;
     }
 
     .header:hover h1 {
         background: url(../images/logo_black.png)no-repeat center center/contain;
-        background-size: contain;
     }
+
 
     .header .gnb {
         position: fixed;
@@ -371,19 +355,11 @@ p {
     .header .gnb ul>li {
         display: flex;
         font-size: 16rem;
-        font-weight: 700;
         position: relative;
         border-bottom: 1px solid #666;
         line-height: 40px;
     }
 
-    .header.on .gnb ul>li>a {
-        color: var(--dc);
-    }
-
-    .header .gnb ul>li:hover>a {
-        color: var(--mc);
-    }
 
     .header .gnb ul>li .sub {
         position: static;
@@ -405,6 +381,7 @@ p {
 
     .header .gnb ul>li>a.on .sub {
         display: flex;
+        opacity: 1;
     }
 
 
@@ -426,14 +403,7 @@ p {
 
     }
 
-    .header .gnb ul>li .sub ul>li {
-        font-size: 15rem;
-        font-weight: 100;
-        color: var(--dc);
-    }
-
     .header .gnb ul>li .sub ul>li:nth-child(1) {
-        font-weight: 700;
         font-size: 15rem;
         margin: 0 0 0 0;
     }
@@ -457,23 +427,10 @@ p {
 
 
     .header .hd_customer {
-        display: flex;
-        gap: 15rem;
         font-size: 22rem;
     }
 
-    .header .hd_customer>li {
-        position: relative;
-        line-height: 100rem;
-    }
 
-    .header .hd_customer>li:hover i {
-        color: var(--mc);
-    }
-
-    .header .hd_customer>li:hover .subm {
-        display: block;
-    }
 
     .header .hd_customer li:nth-child(3) {
         display: none;
@@ -486,41 +443,11 @@ p {
 
     .header .hd_service {
         display: none;
-        gap: 30rem;
-        font-size: 15rem;
-        font-weight: 700;
     }
 
-    .header .hd_service>li {
-        position: relative;
-        line-height: 100rem;
-    }
-
-    .header .hd_service>li:hover>a {
-        color: var(--mc);
-    }
-
-    .header .hd_service>li:hover .subm {
-        display: block;
-    }
 
     .header .subm {
         display: none;
-        position: absolute;
-        top: 70rem;
-        left: 50%;
-        transform: translate(-50%, 0);
-        background: var(--wc);
-        line-height: 35rem;
-        padding: 10rem 20rem 10rem 30rem;
-        font-size: 15rem;
-        font-weight: 500;
-        border: 1px solid var(--bg);
-        text-align: end;
-    }
-
-    .header .subm li a:hover {
-        color: var(--lc);
     }
 }
 
@@ -1528,6 +1455,7 @@ p {
     .footer .bottom .f_info li~li::before {
         left: -9rem;
         height: 8rem;
+        background: #ddd;
     }
 
     .footer .bottom .f_adr {
